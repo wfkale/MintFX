@@ -1,0 +1,597 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MintFx - Tanzania's Premier Forex Broker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#137B3E',
+                        secondary: '#0a4d26',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(19, 123, 62, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .trading-platform {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .stats-item {
+            position: relative;
+        }
+        .stats-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <div class="max-w-screen-xl mx-auto px-4">
+
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="/images/MintFx logo.jpg" alt="MintFx Logo" class="h-12 mb-1">
+                    <h1 class="text-2xl font-bold font-montserrat text-black ml-4">MintFx</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="font-medium hover:text-primary transition">Features</a>
+                    <a href="#platforms" class="font-medium hover:text-primary transition">Platforms</a>
+                    <a href="#accounts" class="font-medium hover:text-primary transition">Account Types</a>
+                    <a href="#education" class="font-medium hover:text-primary transition">Education</a>
+                    <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:block px-4 py-2 rounded-md font-medium hover:bg-primary-100 transition">Login</a>
+                    <a href="#" class="px-4 py-2 bg-primary text-white rounded-md font-medium hover:bg-secondary transition">Open Account</a>
+                    <button class="md:hidden text-gray-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat leading-tight mb-6">
+                        Trade Forex with <span class="text-primary">Zero Commission</span> in Tanzania
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">
+                        MintFx offers lightning-fast execution, local TZS support, and the most competitive spreads in East Africa.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="px-8 py-4 bg-primary text-white rounded-md font-medium hover:bg-secondary transition text-center">Start Trading Now</a>
+                        <a href="#" class="px-8 py-4 border border-primary text-primary rounded-md font-medium hover:bg-gray-50 transition text-center">Demo Account</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Forex Trading" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stats-item">
+                    <div class="text-4xl font-bold font-montserrat mb-2">10,000+</div>
+                    <div class="text-sm uppercase tracking-wider">Active Traders</div>
+                </div>
+                <div class="stats-item">
+                    <div class="text-4xl font-bold font-montserrat mb-2">0%</div>
+                    <div class="text-sm uppercase tracking-wider">Commission</div>
+                </div>
+                <div class="stats-item">
+                    <div class="text-4xl font-bold font-montserrat mb-2">24/7</div>
+                    <div class="text-sm uppercase tracking-wider">Customer Support</div>
+                </div>
+                <div class="stats-item">
+                    <div class="text-4xl font-bold font-montserrat mb-2">50+</div>
+                    <div class="text-sm uppercase tracking-wider">Trading Instruments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-4">Why Choose MintFx?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We're revolutionizing forex trading in Tanzania with features designed for both beginners and experienced traders.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">Lightning Fast Execution</h3>
+                    <p class="text-gray-600">Experience execution speeds under 50ms with our advanced trading infrastructure and local servers in Dar es Salaam.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">TZS Support</h3>
+                    <p class="text-gray-600">Deposit and withdraw in Tanzanian Shillings with zero conversion fees and local bank transfers.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">Zero Commission</h3>
+                    <p class="text-gray-600">Trade forex and CFDs with no hidden fees or commissions. We make money only from the spread.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">Regulated & Secure</h3>
+                    <p class="text-gray-600">Fully compliant with Tanzanian financial regulations with segregated client accounts for maximum security.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">Advanced Tools</h3>
+                    <p class="text-gray-600">Access professional trading tools, indicators, and analytics to enhance your trading strategy.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat mb-3">Dedicated Support</h3>
+                    <p class="text-gray-600">24/7 customer support in Swahili and English via phone, email, and live chat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Platforms Section -->
+    <section id="platforms" class="trading-platform py-16 md:py-24 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6">Powerful Trading Platforms</h2>
+                <p class="text-lg mb-8">Access the markets anytime, anywhere with our award-winning trading platforms available on desktop, web, and mobile.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="text-3xl mb-3">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-montserrat mb-2">MetaTrader 4</h3>
+                        <p class="text-gray-200">The world's most popular trading platform with advanced charting tools.</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="text-3xl mb-3">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-montserrat mb-2">MintFx Mobile</h3>
+                        <p class="text-gray-200">Our custom mobile app with one-tap trading and local payment integration.</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="text-3xl mb-3">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-montserrat mb-2">WebTrader</h3>
+                        <p class="text-gray-200">No download required. Trade directly from your browser.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition text-center">
+                        <i class="fas fa-download mr-2"></i> Download Platform
+                    </a>
+                    <a href="#" class="px-8 py-3 border border-white text-white rounded-md font-medium hover:bg-white hover:bg-opacity-10 transition text-center">
+                        <i class="fas fa-play-circle mr-2"></i> Platform Tour
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Account Types Section -->
+    <section id="accounts" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-4">Choose Your Account</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We offer flexible account types to suit traders of all experience levels.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold font-montserrat mb-4">Standard Account</h3>
+                    <div class="text-primary text-3xl font-bold mb-6">$100</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Spreads from 1.0 pips</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Leverage up to 1:500</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>All trading instruments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>24/5 customer support</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition text-center">Open Account</a>
+                </div>
+                
+                <div class="border-2 border-primary rounded-lg p-8 shadow-lg relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-bold rounded-bl-lg">POPULAR</div>
+                    <h3 class="text-2xl font-bold font-montserrat mb-4">Premium Account</h3>
+                    <div class="text-primary text-3xl font-bold mb-6">$1,000</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Spreads from 0.5 pips</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Leverage up to 1:500</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>All trading instruments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Personal account manager</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Priority withdrawals</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition text-center">Open Account</a>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold font-montserrat mb-4">Islamic Account</h3>
+                    <div class="text-primary text-3xl font-bold mb-6">$500</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Swap-free trading</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Spreads from 1.2 pips</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Leverage up to 1:200</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                            <span>Sharia-compliant</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition text-center">Open Account</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="text-primary font-medium hover:underline">Compare all account types →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-4">Learn Forex Trading</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Boost your trading skills with our comprehensive educational resources.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-primary flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-montserrat mb-3">Forex Basics</h3>
+                        <p class="text-gray-600 mb-4">Learn the fundamentals of forex trading with our beginner-friendly courses.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Start Learning →</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-primary flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-montserrat mb-3">Technical Analysis</h3>
+                        <p class="text-gray-600 mb-4">Master chart patterns, indicators, and technical trading strategies.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Start Learning →</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-primary flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-montserrat mb-3">Market Analysis</h3>
+                        <p class="text-gray-600 mb-4">Daily market updates and analysis from our team of experts.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Start Learning →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition inline-block">View All Educational Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6">Ready to Start Trading?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Join thousands of Tanzanian traders who trust MintFx for their forex trading needs.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="px-8 py-4 bg-white text-primary rounded-md font-bold hover:bg-gray-100 transition">Open Live Account</a>
+                <a href="#" class="px-8 py-4 border border-white text-white rounded-md font-bold hover:bg-white hover:bg-opacity-10 transition">Try Demo Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6">Contact Us</h2>
+                    <p class="text-lg text-gray-600 mb-8">Have questions? Our support team is available 24/7 to assist you with any inquiries.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-primary text-2xl mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold font-montserrat mb-1">Head Office</h3>
+                                <p class="text-gray-600">400 Toure Drive, 3rd floor, Masaki, Dar Es Salaam, Tanzania</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-2xl mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold font-montserrat mb-1">Phone</h3>
+                                <p class="text-gray-600">+255 22 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-2xl mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold font-montserrat mb-1">Email</h3>
+                                <p class="text-gray-600">info@tantelholdings.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-2xl mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold font-montserrat mb-1">Working Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold font-montserrat mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary text-white rounded-md font-medium hover:bg-secondary transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-2">
+                <div>
+                    <img src="/images/MintFx_logo-removebg-preview.png" alt="MintFx Logo" class="h-24 mb-3">
+                    <p class="text-gray-400">MintFx is Tanzania's leading forex broker, offering competitive trading conditions, local currency support, and exceptional customer service.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold font-montserrat mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Trading Platforms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Account Types</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Deposit Methods</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Withdrawal</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold font-montserrat mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Risk Disclosure</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">AML Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Complaints</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold font-montserrat mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-primary transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-primary transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-primary transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-primary transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Download our mobile app:</p>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="#" class="flex items-center justify-center bg-black text-white px-3 py-2 rounded">
+                            <i class="fab fa-apple mr-2"></i> App Store
+                        </a>
+                        <a href="#" class="flex items-center justify-center bg-black text-white px-3 py-2 rounded">
+                            <i class="fab fa-google-play mr-2"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>© 2025 MintFx Limited. All rights reserved. MintFx is a registered trademark in Tanzania.</p>
+                <p class="mt-2 text-sm">Forex trading involves significant risk of loss and is not suitable for all investors.</p>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const navLinks = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-16');
+                navLinks.classList.toggle('left-0');
+                navLinks.classList.toggle('right-0');
+                navLinks.classList.toggle('bg-white');
+                navLinks.classList.toggle('p-4');
+                navLinks.classList.toggle('shadow-md');
+                navLinks.classList.toggle('space-y-4');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!navLinks.classList.contains('hidden')) {
+                            navLinks.classList.add('hidden');
+                            navLinks.classList.remove('flex');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
